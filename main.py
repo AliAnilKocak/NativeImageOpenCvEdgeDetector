@@ -35,7 +35,7 @@ cv2.destroyAllWindows()
 
 # https://stackoverflow.com/questions/37409811/smoothing-edges-of-a-binary-image
 # http://learnopencv.com/filling-holes-in-an-image-using-opencv-python-c/
-
+# https://docs.opencv.org/trunk/d9/d61/tutorial_py_morphological_ops.html
 
 
 # import cv2
