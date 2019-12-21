@@ -1,26 +1,21 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+kernel = np.ones((5,5),np.uint8)
 
-img = cv2.imread(r"erozyon5.png")
+img = cv2.imread(r"D:\maymun.jpg")
 img = cv2.GaussianBlur(img, (11, 11), 0)
-sobelx = cv2.Sobel(img, cv2.CV_64F, 1, 0)
-sobely = cv2.Sobel(img, cv2.CV_64F, 0, 1)
-laplacian = cv2.Laplacian(img, cv2.CV_64F, ksize=5)
-canny = cv2.Canny(img, 0, 50)
-# cv2.imshow("Image", img)
-# cv2.imshow("Sobelx", sobelx)
-# cv2.imshow("Sobely", sobely)
-# cv2.imshow("Laplacian", laplacian)
-cv2.imshow("Canny", canny)
+
+img = cv2.Canny(img, 0, 50)
+
+# img = cv2.addWeighted(img, 48, cv2.blur(img, (60, 30)), -4, 40)
+
+img = cv2.morphologyEx(img, cv2.MORPH_DILATE, kernel)
+img = cv2.bitwise_not(img)
+cv2.imwrite('keni.jpg',img)
+cv2.imshow("Canny", img)
 
 
-img = cv2.imread(r"C:\Users\alian\Desktop\NetbeansProjects\images\maymun.jpg")
-b, g, r = cv2.split(img)
-plt.hist(b.ravel(), 256, [0, 256])
-plt.hist(g.ravel(), 256, [0, 256])
-plt.hist(r.ravel(), 256, [0, 256])
-plt.show()
 
 
 cv2.waitKey(0)
