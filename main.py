@@ -8,7 +8,7 @@ kernel = np.ones((5,5),np.uint8)
 img = cv2.dilate(img,kernel,iterations = 2)
 
 
-th, im_th = cv2.threshold(img, 0, 90, cv2.THRESH_BINARY)
+th, im_th = cv2.threshold(img, 0, 40, cv2.THRESH_OTSU)
 
 im_floodfill = im_th.copy()
 
@@ -21,6 +21,28 @@ im_floodfill_inv = cv2.bitwise_not(im_floodfill)
 
 img = im_th | im_floodfill_inv
 
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.GaussianBlur(img, (11, 11), 0)
+img = cv2.dilate(img,kernel,iterations = 2)
+
+img = cv2.bitwise_not(img)
 
 
 
