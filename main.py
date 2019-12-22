@@ -42,9 +42,11 @@ img = cv2.GaussianBlur(img, (11, 11), 0)
 img = cv2.GaussianBlur(img, (11, 11), 0)
 img = cv2.dilate(img,kernel,iterations = 2)
 
-img = cv2.bitwise_not(img)
-img = cv2.Canny(img, 0, 50)
+img = cv2.Canny(img, 0, 67)
 
+# img = cv2.bitwise_not(img)
+
+# img = cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel,3)
 
 
 
